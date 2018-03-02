@@ -760,7 +760,7 @@ class HarddiskManager:
 			BLACKLIST=["mmcblk0"]
 		elif getMachineBuild() in ('xc7439'):
 			BLACKLIST=["mmcblk1"]
-		elif getMachineBuild() in ('u5','u5pvr'):
+		elif getMachineBuild() in ('u5','u5pvr','cc1'):
 			BLACKLIST=["mmcblk0", "mmcblk1"]
 
 		blacklisted = False
