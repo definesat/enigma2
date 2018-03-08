@@ -153,6 +153,9 @@ if [ "$ret" -ne "1" ]; then
 		if [ $stbcheck == "u5" ]; then
 			killall -9 showiframe; sleep 5
 		fi
+		if [ $stbcheck == "cc" ]; then
+			killall -9 libreader; sleep 1
+		fi
 	fi
 fi
 
@@ -160,7 +163,9 @@ case $ret in
 	1)
 		if [ -e /proc/stb/info/boxtype ]; then
 			stbcheck=`cat /proc/stb/info/boxtype | cut -c1-2`
-			if [ $stbcheck == "u5" ] || [ $stbcheck == "cc1" ]; then
+			if [ $stbcheck == "u5" ]; then
+				/usr/bin/hihalt
+			elif [ $stbcheck == "cc" ];then
 				/usr/bin/hihalt
 			else
 				/sbin/halt
