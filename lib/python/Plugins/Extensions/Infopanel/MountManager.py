@@ -107,6 +107,8 @@ class HddMount(Screen):
 				continue
 			if getMachineBuild() in ('u5') and search('mmcblk1p[1]',device):
 				continue
+			if getMachineBuild() in ('cc1') and search('mmcblk0p[1-9]',device):
+				continue				
 			if device in list2:
 				continue
 			self.buildMy_rec(device)
@@ -198,6 +200,11 @@ class HddMount(Screen):
 				device2 = device.replace('p8', '')
 		except:
 			device2 = ''
+		print "device:"
+		print device		
+		print "device2:"
+		print device2
+
 		devicetype = path.realpath('/sys/block/' + device2 + '/device')
 		d2 = device
 		name = 'USB: '
@@ -419,6 +426,8 @@ class DevicePanelConf(Screen, ConfigListScreen):
 				continue
 			if getMachineBuild() in ('u5') and search('mmcblk1p[1]',device):
 				continue
+			if getMachineBuild() in ('cc1') and search('mmcblk0p[1-9]',device):
+				continue				
 			if device in list2:
 				continue
 			if device in swapdevices:
