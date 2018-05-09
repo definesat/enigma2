@@ -162,7 +162,7 @@ if [ "$ret" -ne "1" ]; then
 			killall -9 showiframe; sleep 5
 		fi
 		if [ $stbcheck == "cc" ]; then
-			killall -9 libreader; sleep 1
+			killall -9 libreader; sleep 5
 		fi
 	fi
 fi
